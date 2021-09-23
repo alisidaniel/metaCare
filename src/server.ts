@@ -6,12 +6,17 @@ import config from './config/config';
 // UTILITIES
 import { corsOptions } from '../src/utils';
 
+//  ERROR HANDLER MIDDLEWARE
+import errorHandler from './app/middlewares/errorHandler';
+
 const app: Application = express();
 
 //*  MIDDLEWARES */
 app.use(express.urlencoded({ extended: false }) as RequestHandler);
 app.use(express.json() as RequestHandler);
 app.use(cors(corsOptions));
+
+app.use(errorHandler);
 
 //* SERVER */
 const httpServer = http.createServer(app);
