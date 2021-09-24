@@ -5,10 +5,12 @@ const router = express.Router();
 
 const controller = new commentController();
 
+router.get('/', controller.show);
+
 router.post('/', controller.create);
 
-router.put('/edit', controller.create);
+router.put('/edit', controller.edit);
 
-router.delete('/:episode_id', controller.create);
+router.delete('/:episode', controller.delete);
 
 export default router;
