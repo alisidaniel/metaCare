@@ -1,1 +1,1 @@
-test('demo test is working ', () => {});
+test('example test is working ', () => {});
